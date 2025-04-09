@@ -1,0 +1,29 @@
+services:
+  front-dev:
+    image: totemokawaiikano:latest
+    container_name: totemokawaiikano-webpage-ctnr
+    build:
+      context: .
+      target: dev-runner
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src              #開發只映射src路徑
+      - front-dev-volume:/app/data  #使用具名的數據捲 front-dev-volumn，日後需要資料可用 docker cp containerName:/app/data /要Call出來存在哪邊
+      # - /app/node_modules         #採坑紀錄，不使用，貌似是因為這行會快取住node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+
+  front-prod:
+    build:
+      context: .
+      target: prod-runner
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    command: node server.js
+
+volumes:
+  front-dev-volume: #定義具名的數據卷給services使用

@@ -1,0 +1,51 @@
+// @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+
+.kanoBounce {
+  display: inline-block;
+  animation: bounce 0.8s ease-in-out;
+  color: #ff69b4;
+  font-weight: bold;
+  cursor: pointer;
+  transition: text-shadow 0.3s, transform 0.3s;
+  // font-family: 'Zhi Mang Xing', cursive;  // 👈 加手寫字體
+  font-size: 1.4em; // 稍微大一點讓字美一點
+
+  &:hover {
+    animation: bounceTwice 1s ease-in-out;
+    text-shadow: 0 0 8px #ff8ee8, 0 0 14px #ff1493;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+    color: #ff1493;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceTwice {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px) scale(1.1);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-6px) scale(1.05);
+  }
+  80% {
+    transform: translateY(0);
+  }
+}

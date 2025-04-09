@@ -1,0 +1,164 @@
+.memoriesBlock {
+    text-align: center;
+    margin: 0px auto;
+    max-width: 960px;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #5a3e1b;
+    // font-family: 'Courier New', Courier, monospace;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.photo {
+    background-image: url('../../assets//elements/wood.png');
+    background-size: cover;
+    border: 6px solid #5a3e1b;
+    border-radius: 12px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.03); // 微放大
+        box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.4); // 加強陰影
+    }
+
+    &:hover img {
+        filter: brightness(1.05); // 提升亮度
+    }
+}
+
+.photo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.photo :global(img) {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    transition: filter 0.3s ease; // 為亮度過渡設動畫
+}
+
+.button {
+    background-color: #6b4c2f; // 深木色
+    color: #fff8f0;
+    font-size: 1rem;
+    // font-family: 'Georgia', 'Times New Roman', serif; // 溫柔復古感
+    padding: 10px 24px;
+    border-radius: 12px;
+    border: 2px solid #5a3e1b;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #5a3e1b;
+        box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    background-image: url('../../assets/elements/wood.png');
+    background-blend-mode: multiply;
+    background-size: cover;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.1),
+    2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dialog {
+    &:not([open]) {
+        display: none;
+      }
+    border: none;
+    padding: 0;
+    background: transparent;
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // 背景模糊或深色
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.7);
+    }
+}
+
+.dialog::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.dialogContent {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+        max-height: 70vh;
+        border-radius: 8px;
+    }
+
+    .closeButton {
+        margin-top: 12px;
+        padding: 6px 12px;
+        font-size: 1rem;
+        background-color: #5a3e1b;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+    animation: fadeIn 0.4s ease-in-out;
+}

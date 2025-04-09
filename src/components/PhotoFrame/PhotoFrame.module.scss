@@ -1,0 +1,26 @@
+// styles/PhotoFrame.module.scss
+
+.photoFrame {
+    padding: 12px;
+    background-image: url('../../assets/elements/wood.png'); // 木紋圖放 public 資料夾
+    background-size: cover;
+    background-position: center;
+    border: 8px solid #5a3e1b; // 深棕色邊框
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    margin: 16px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+    }
+}

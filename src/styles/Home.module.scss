@@ -1,0 +1,304 @@
+// @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond&display=swap');
+
+body {
+    background-color: #f2e8dc; // 木紋白底
+    color: #4b3b2f; // 字體咖啡色
+    // font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+}
+
+
+%photoNormal {
+    filter: sepia(0.3) contrast(1.1) brightness(0.95);
+    border: 6px solid #f5f5dc;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+%photomoku {
+    border: 8px solid #caa472;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    filter: sepia(0.15) contrast(1.1);
+    border-radius: 6px;
+}
+
+.page {
+    // font-family: 'Segoe UI', sans-serif;
+    // color: #333;
+
+    // font-family: 'Cormorant Garamond', serif;
+    // background-color: #fdfaf6;
+    // color: #4b3b2f;
+
+    // background-color: #f8f2e4; // 主背景：米色
+    // color: #4b3b2f; // 字體顏色：深咖啡
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    color: white;
+    overflow: hidden;
+
+    // 把背景圖移到 ::before 層
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('../assets/images/kano-02.jpg') center/cover no-repeat;
+        z-index: 0;
+        transform: scale(1);
+        transition: transform 0.5s ease;
+    }
+
+    // hover 時放大背景
+    &:hover::before {
+        transform: scale(1.02);
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.4); // ✅ 原本的配色保留
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .scrollLink {
+            font-size: 1rem;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dashed #fff;
+            animation: bounce 1.5s infinite;
+        }
+    }
+}
+
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+.gallery {
+    padding: 4rem 2rem;
+    // background: #fff0f5;
+    background-color: inherit;
+    text-align: center;
+
+    h2 {
+        font-size: 2rem;
+        color: #c71585;
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+
+            // @extend %photoNormal;
+        }
+    }
+}
+
+.story {
+    padding: 4rem 2rem;
+    // background: #fffefc;
+    text-align: center;
+
+    h2 {
+        font-size: 2rem;
+        color: #c71585;
+        margin-bottom: 3rem;
+    }
+
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .event {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        text-align: left;
+        flex-wrap: wrap;
+
+        .text {
+            flex: 1;
+            min-width: 260px;
+
+            h3 {
+                color: #ff69b4;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+        }
+
+        .image {
+            position: relative;
+            flex: 1;
+            min-width: 260px;
+            max-width: 434px;
+
+            min-height: 227px;
+            max-height: 600px;
+
+            &.vertical {
+                // min-height: 600px;
+            }
+
+            img {
+                width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                // @extend %photoNormal;
+            }
+        }
+
+        &.reverse {
+            flex-direction: row-reverse;
+            text-align: right;
+
+            .text {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.futureSection {
+    text-align: center;
+    color: #ccc;
+    // font-family: 'Courier New', Courier, monospace;
+    opacity: 0.9;
+    padding-bottom: 40px;
+}
+
+.futureCircle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 3px dashed #aaa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2px);
+
+    span {
+        font-size: 0.85rem;
+        color: #aaa;
+        letter-spacing: 1px;
+    }
+}
+
+.futureText {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #999;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+}
+
+
+.ending {
+    margin-top: 40px;
+    padding: 5rem 2rem;
+    // background: #fff0f5;
+    background: rgb(152, 93, 93);
+    text-align: center;
+
+    h2 {
+        font-size: 2rem;
+        // color: #c71585;
+        color: #4b3b2f;
+        margin-bottom: 2rem;
+    }
+}
+
+.footer {
+    padding: 3rem 1rem;
+    // background: #ffe4f2;
+    background: inherit;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #c71585;
+    line-height: 1.6;
+}
+
+// h1, h2, h3 {
+//     color: #8b5e3c; // 標題色：深木色
+// }
+
+// .story,
+// .gallery,
+// .ending {
+//   background-color: #fff6dc; // 區塊底色：淡木色
+// }
