@@ -68,7 +68,7 @@ WORKDIR /app
 COPY --from=deps /app ./
 RUN npm run build
 # RUN cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone
-RUN cp -r .next/static .next/standalone/.next/
+RUN cp -r .next/static .next/standalone/.next/ && cp -r ../public .next/standalone
 
 # Production image, copy all the files and run next
 FROM base AS prod-runner
