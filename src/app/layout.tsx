@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_TC } from "next/font/google";
 // import { Zhi_Mang_Xing } from 'next/font/google';
 // import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
+import "./globals.css";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
