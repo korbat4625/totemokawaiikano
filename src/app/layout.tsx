@@ -33,9 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <head>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet"></link>
-      </head> */}
+      <head>
+        <meta name="google-site-verification" content="FBhcn21XJ7HF9wU78LJThsxOuIPMxq8AfB7sOj1P5Sw" />
+      </head>
       <body className={`${notoSansTcFont.className}`}>
         {children}
       </body>
