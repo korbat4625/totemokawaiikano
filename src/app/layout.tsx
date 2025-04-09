@@ -33,9 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="google-site-verification" content="FBhcn21XJ7HF9wU78LJThsxOuIPMxq8AfB7sOj1P5Sw" />
-      </head>
+      {/* <head>
+        
+      </head> */}
       <body className={`${notoSansTcFont.className}`}>
         {children}
       </body>
