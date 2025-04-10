@@ -24,24 +24,19 @@ const notoSansTcFont = Noto_Sans_TC({
   display: "swap",
 });
 
-// export const metadata: Metadata = {
-//   title: "超可愛的香乃の網站 🐰",
-//   description: "送給我最愛的香乃 💕"
-// };
-
 export const metadata: Metadata = {
-  title: '超可愛的香乃の網站',
-  description: '送給我最愛的香乃 💕',
+  title: '✨超可愛的香乃の網站💕',
+  description: '✨送給我最愛的香乃，世界上怎麼有那麼可愛的人💕',
   openGraph: {
-    title: '超可愛的香乃の網站',
-    description: '送給我最愛的香乃 💕 ✨',
+    title: '✨超可愛的香乃の網站💕',
+    description: '✨💕送給我最愛的香乃 💕✨',
     url: 'https://totemokawaiikanoowatashiwasukidesuu.com/',
-    siteName: '超可愛的香乃の網站',
+    siteName: '✨💕超可愛的香乃の網站💕✨',
     images: [
       {
-        url: memory023.src, // 預覽圖網址
-        width: 300,
-        height: 300,
+        url: 'https://totemokawaiikanoowatashiwasukidesuu.com/memory023.jpg', // 預覽圖網址
+        width: 150,
+        height: 150,
       },
     ],
     locale: 'zh-TW',
@@ -49,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '超可愛的香乃の網站',
-    description: '送給我最愛的香乃 💕 ✨',
-    images: [memory023.src],
+    title: '✨超可愛的香乃の網站✨',
+    description: '✨送給我最愛的香乃，世界上怎麼有那麼可愛的人💕',
+    images: ['https://totemokawaiikanoowatashiwasukidesuu.com/memory023.jpg'],
   },
 };
 
