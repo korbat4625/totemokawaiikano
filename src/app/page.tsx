@@ -3,6 +3,7 @@ import styles from '@/styles/Home.module.scss';
 
 //
 import Image from 'next/image';
+// import { useInView } from '@/hooks/useInView';
 import { Gallery } from '@/components/Gallery/Gallery';
 import KanoText from '@/components/KanoText/KanoText';
 import PhotoFrame from '@/components/PhotoFrame/PhotoFrame';
